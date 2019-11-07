@@ -2,18 +2,18 @@ package org.campuswizard.controller;
 
 import java.util.ArrayList;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class LoginController {
 	
 	@RequestMapping(value = "/login")
-    public ArrayList getLogin(@RequestParam String username,
+    public ArrayList<String> getLogin(@RequestParam String username,
             @RequestParam String password) {
 
-		ArrayList al=new ArrayList();
+		ArrayList<String> al=new ArrayList<String>();
 		 System.out.println(username);
 		 System.out.println(password);
 		
