@@ -1,25 +1,23 @@
 package org.campuswizard.controller;
 
-import java.util.ArrayList;
-
+import org.springframework.http.HttpRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class LoginController {
 	
-	@RequestMapping(value = "/login")
-    public ArrayList<String> getLogin(@RequestParam String username,
-            @RequestParam String password) {
-
-		ArrayList<String> al=new ArrayList<String>();
-		 System.out.println(username);
-		 System.out.println(password);
+	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
+    public void getLogin(@RequestBody testBean request) {
 		
-		 al.add(username);
-		 al.add(password);
-		return al;
+System.out.println("its going in ");
+		System.out.println(request.getUsername());
 		
         
     }
