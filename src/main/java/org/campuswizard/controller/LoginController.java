@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-@CrossOrigin(origins="https://campuswizard-stage.surge.sh/")
+@CrossOrigin(origins="*")
 @RestController
 public class LoginController {
 	
