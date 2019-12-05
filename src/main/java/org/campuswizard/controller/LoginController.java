@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
-    public void getLogin(@RequestBody testBean request) {
+    public boolean getLogin(@RequestBody testBean request) {
 		
 System.out.println("its going in ");
 		System.out.println(request.getUsername());
 		
-        
+      return true;  
     }
 
 }
